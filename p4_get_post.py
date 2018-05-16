@@ -2,11 +2,29 @@ from flask import Flask, redirect, url_for, request
 app = Flask(__name__)
 
 
+@app.route('/calculator/add/<a>/<b>')
+def add1(a, b):
+   ans = int(a)+int(b)
+   return 'answer is %s' % ans
+@app.route('/calculator/mul/<a>/<b>')
+def mul1(a, b):
+   ans = int(a)*int(b)
+   return 'answer is %s' % ans
+@app.route('/calculator/sub/<a>/<b>')
+def sub1(a, b):
+   ans = int(a)-int(b)
+   return 'answer is %s' % ans
+@app.route('/calculator/div/<a>/<b>')
+def div1(a, b):
+   ans = int(a)/int(b)
+   return 'answer is %s' % ans
+
+'''
 @app.route('/calculator/<a>/<b>')
 def success(a,b):
    ans = int(a)+int(b)
    return 'answer is %s' % ans
-
+'''
 
 @app.route('/calculator2', methods=['POST', 'GET'])
 def calc():

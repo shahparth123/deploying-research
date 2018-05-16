@@ -14,6 +14,11 @@ def index():
     #simply print "hello world"
     return 'Hello world'
 
+
+@app.route('/sttp')
+def sttp():
+    return 'Hello Python developers'
+    
 if __name__ == '__main__':
     #if it is main program, run flask server on localhost with 9090 port number
     app.run(debug=True, host='0.0.0.0',port=9090)
